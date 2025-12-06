@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9th Grade Math Learning Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Math Hub</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active" data-translate="navHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="algebra.html" class="nav-link" data-translate="navAlgebra">Algebra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="geometry.html" class="nav-link" data-translate="navGeometry">Geometry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link" data-translate="navPractice">Practice</a>
+                    </li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <svg class="theme-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="sun-icon" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <path class="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-translate="homeTitle">Welcome to 9th Grade Math</h1>
+                <p data-translate="homeSubtitle">Master algebra and geometry with interactive visualizations and clear explanations</p>
+                
+                <!-- Hero SVG Illustration -->
+                <div class="hero-svg">
+                    <svg width="400" height="300" viewBox="0 0 400 300" class="math-illustration">
+                        <!-- Coordinate system -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                    refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" class="arrow-fill" />
+                            </marker>
+                        </defs>
+                        
+                        <!-- Grid lines -->
+                        <g class="grid-lines">
+                            <line x1="50" y1="50" x2="50" y2="250" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <line x1="50" y1="250" x2="350" y2="250" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <!-- Grid -->
+                            <g class="grid" opacity="0.3">
+                                <line x1="50" y1="200" x2="350" y2="200"/>
+                                <line x1="50" y1="150" x2="350" y2="150"/>
+                                <line x1="50" y1="100" x2="350" y2="100"/>
+                                <line x1="100" y1="50" x2="100" y2="250"/>
+                                <line x1="150" y1="50" x2="150" y2="250"/>
+                                <line x1="200" y1="50" x2="200" y2="250"/>
+                                <line x1="250" y1="50" x2="250" y2="250"/>
+                                <line x1="300" y1="50" x2="300" y2="250"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Parabola -->
+                        <path d="M 100 200 Q 200 100 300 200" stroke-width="3" fill="none" class="parabola"/>
+                        
+                        <!-- Triangle -->
+                        <polygon points="320,180 360,180 340,140" class="triangle" stroke-width="2"/>
+                        
+                        <!-- Labels -->
+                        <text x="35" y="60" class="axis-label">y</text>
+                        <text x="355" y="265" class="axis-label">x</text>
+                        <text x="190" y="90" class="function-label">y = ax² + bx + c</text>
+                        <text x="315" y="200" class="shape-label">△ABC</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="topics-overview">
+            <div class="container">
+                <h2 data-translate="whatYouLearn">What You'll Learn</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60">
+                                <rect x="10" y="25" width="40" height="10" rx="2" class="algebra-icon"/>
+                                <text x="30" y="35" text-anchor="middle" class="icon-text">x²</text>
+                            </svg>
+                        </div>
+                        <h3 data-translate="algebraTitle">Algebra</h3>
+                        <p data-translate="algebraDesc">Linear equations, quadratic functions, and systems of equations</p>
+                        <a href="algebra.html" class="topic-link" data-translate="exploreAlgebra">Explore Algebra →</a>
+                    </div>
+
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60">
+                                <circle cx="30" cy="30" r="20" class="geometry-icon"/>
+                                <polygon points="15,40 30,15 45,40" class="geometry-triangle"/>
+                            </svg>
+                        </div>
+                        <h3 data-translate="geometryTitle">Geometry</h3>
+                        <p data-translate="geometryDesc">Shapes, angles, area, perimeter, and the Pythagorean theorem</p>
+                        <a href="geometry.html" class="topic-link" data-translate="exploreGeometry">Explore Geometry →</a>
+                    </div>
+
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60">
+                                <rect x="10" y="10" width="40" height="40" rx="5" class="practice-icon"/>
+                                <circle cx="25" cy="25" r="3" class="practice-dot"/>
+                                <circle cx="35" cy="35" r="3" class="practice-dot"/>
+                                <circle cx="25" cy="45" r="3" class="practice-dot"/>
+                            </svg>
+                        </div>
+                        <h3 data-translate="practiceTitle">Practice</h3>
+                        <p data-translate="practiceDesc">Interactive exercises and problem-solving activities</p>
+                        <a href="practice.html" class="topic-link" data-translate="startPracticing">Start Practicing →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-math-matters">
+            <div class="container">
+                <h2 data-translate="whyMathMatters">Why Math Matters in 2024 and Beyond</h2>
+                <div class="math-relevance">
+                    <div class="relevance-intro">
+                        <p data-translate="mathRelevanceIntro">Mathematics isn't just about numbers on a page - it's the language that powers our modern world. Every app you use, every building you enter, and every decision you make involves mathematical thinking.</p>
+                    </div>
+                    
+                    <div class="career-connections">
+                        <h3 data-translate="careersTitle">🚀 Careers That Use This Math</h3>
+                        <div class="career-grid">
+                            <div class="career-item">
+                                <h4>💻 Software Developer</h4>
+                                <p>Uses algebra for algorithms, geometry for graphics, and systems of equations for optimization.</p>
+                            </div>
+                            <div class="career-item">
+                                <h4>🏗️ Architect</h4>
+                                <p>Applies geometry for design, Pythagorean theorem for structural calculations, and area formulas for planning.</p>
+                            </div>
+                            <div class="career-item">
+                                <h4>🎮 Game Designer</h4>
+                                <p>Creates realistic physics using quadratic functions, designs levels with geometric principles.</p>
+                            </div>
+                            <div class="career-item">
+                                <h4>💰 Financial Analyst</h4>
+                                <p>Models investment growth with exponential functions, analyzes trends with linear equations.</p>
+                            </div>
+                            <div class="career-item">
+                                <h4>🎬 Animation Artist</h4>
+                                <p>Uses coordinate geometry for character movement, trigonometry for realistic motion.</p>
+                            </div>
+                            <div class="career-item">
+                                <h4>🏥 Medical Technician</h4>
+                                <p>Calculates dosages with proportions, uses geometry for imaging and measurements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="daily-life-math">
+                        <h3>📱 Math in Your Daily Life</h3>
+                        <div class="daily-examples">
+                            <div class="daily-item">
+                                <span class="emoji">📱</span>
+                                <div>
+                                    <h4>Your Smartphone</h4>
+                                    <p>GPS uses triangulation, camera focus uses parabolic curves, and screen resolution involves coordinate geometry.</p>
+                                </div>
+                            </div>
+                            <div class="daily-item">
+                                <span class="emoji">🎵</span>
+                                <div>
+                                    <h4>Music Streaming</h4>
+                                    <p>Algorithms use linear equations to recommend songs, and audio compression uses mathematical formulas.</p>
+                                </div>
+                            </div>
+                            <div class="daily-item">
+                                <span class="emoji">🛒</span>
+                                <div>
+                                    <h4>Online Shopping</h4>
+                                    <p>Price comparisons, discount calculations, and delivery optimization all use algebraic thinking.</p>
+                                </div>
+                            </div>
+                            <div class="daily-item">
+                                <span class="emoji">🎯</span>
+                                <div>
+                                    <h4>Social Media</h4>
+                                    <p>Feed algorithms, engagement metrics, and content optimization rely on mathematical models.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 data-translate="learningFeatures">Learning Features</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3 data-translate="visualLearning">📊 Visual Learning</h3>
+                        <p data-translate="visualLearningDesc">Interactive SVG diagrams help you understand complex concepts</p>
+                    </div>
+                    <div class="feature">
+                        <h3 data-translate="darkLightMode">🌙 Dark/Light Mode</h3>
+                        <p data-translate="darkLightModeDesc">Choose your preferred theme for comfortable studying</p>
+                    </div>
+                    <div class="feature">
+                        <h3 data-translate="responsiveDesign">📱 Responsive Design</h3>
+                        <p data-translate="responsiveDesignDesc">Learn on any device - desktop, tablet, or mobile</p>
+                    </div>
+                    <div class="feature">
+                        <h3 data-translate="gradeFocused">🎯 Grade-Focused</h3>
+                        <p data-translate="gradeFocusedDesc">Content specifically designed for 9th grade curriculum</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="footerText">&copy; 2024 Math Learning Hub. Designed for 9th Grade Students.</p>
+        </div>
+    </footer>
+
+    <script src="js/auto-translate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

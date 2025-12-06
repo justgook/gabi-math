@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry - 9th Grade Math</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Math Hub</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="algebra.html" class="nav-link">Algebra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="geometry.html" class="nav-link active">Geometry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">Practice</a>
+                    </li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <svg class="theme-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="sun-icon" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <path class="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Geometry Essentials</h1>
+                <p>Explore shapes, angles, area, perimeter, and spatial relationships</p>
+            </div>
+        </section>
+
+        <!-- Why Geometry Matters Section -->
+        <section class="relevance-section">
+            <div class="container">
+                <h2>Why Geometry Powers Our World</h2>
+                <div class="relevance-grid">
+                    <div class="relevance-card">
+                        <h3>🏠 Architecture & Construction</h3>
+                        <p>Every building, bridge, and structure relies on geometric principles. Triangular trusses provide strength, circular arches distribute weight, and precise angles ensure stability.</p>
+                    </div>
+                    <div class="relevance-card">
+                        <h3>🎮 Computer Graphics & Gaming</h3>
+                        <p>Video games, movies, and VR experiences are built using millions of triangles. 3D modeling, animation, and rendering all depend on geometric calculations happening in real-time.</p>
+                    </div>
+                    <div class="relevance-card">
+                        <h3>🛰️ GPS & Navigation</h3>
+                        <p>Your phone's GPS uses triangulation with satellites to pinpoint your location. The same geometric principles help self-driving cars navigate and delivery drones find their destinations.</p>
+                    </div>
+                    <div class="relevance-card">
+                        <h3>🎨 Art & Design</h3>
+                        <p>From logo design to photography composition, geometric principles create visual harmony. The golden ratio, symmetry, and proportions make designs pleasing to the eye.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="topic-section">
+                    <h2>Triangles and Their Properties</h2>
+                    
+                    <!-- Real-world applications for triangles -->
+                    <div class="real-world-intro">
+                        <h3>🌍 Triangles Everywhere</h3>
+                        <div class="application-examples">
+                            <div class="example-card">
+                                <h4>🏗️ Structural Engineering</h4>
+                                <p>Triangles are the strongest shape! Roof trusses, bridges, and towers use triangular frameworks because they can't be deformed without changing side lengths.</p>
+                                <small>The Eiffel Tower contains over 18,000 triangular pieces</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>📡 Satellite Communication</h4>
+                                <p>GPS systems use triangulation - measuring distances from three satellites to pinpoint your exact location on Earth.</p>
+                                <small>Your phone calculates your position using triangle geometry</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>🎯 Sports & Recreation</h4>
+                                <p>Pool players use triangle geometry for bank shots, soccer players calculate angles for goals, and golfers consider triangular relationships for accurate shots.</p>
+                                <small>Angle of incidence equals angle of reflection</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>Types of Triangles</h3>
+                            <p>Triangles can be classified by their sides and angles:</p>
+                            <ul>
+                                <li><strong>By sides:</strong> Equilateral, Isosceles, Scalene</li>
+                                <li><strong>By angles:</strong> Acute, Right, Obtuse</li>
+                            </ul>
+                            <p><strong>Key Properties:</strong></p>
+                            <ul>
+                                <li>Sum of angles = 180°</li>
+                                <li>Area = ½ × base × height</li>
+                                <li>Perimeter = sum of all sides</li>
+                            </ul>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="geometry-diagram">
+                                <!-- Equilateral Triangle -->
+                                <g class="triangle-group">
+                                    <polygon points="80,80 120,80 100,50" class="equilateral-triangle" stroke-width="2"/>
+                                    <text x="100" y="100" text-anchor="middle" class="triangle-label">Equilateral</text>
+                                    <text x="100" y="115" text-anchor="middle" class="triangle-sublabel">All sides equal</text>
+                                </g>
+                                
+                                <!-- Isosceles Triangle -->
+                                <g class="triangle-group">
+                                    <polygon points="180,80 220,80 200,40" class="isosceles-triangle" stroke-width="2"/>
+                                    <text x="200" y="100" text-anchor="middle" class="triangle-label">Isosceles</text>
+                                    <text x="200" y="115" text-anchor="middle" class="triangle-sublabel">Two sides equal</text>
+                                </g>
+                                
+                                <!-- Right Triangle -->
+                                <g class="triangle-group">
+                                    <polygon points="280,80 320,80 280,50" class="right-triangle" stroke-width="2"/>
+                                    <!-- Right angle indicator -->
+                                    <rect x="275" y="75" width="10" height="10" fill="none" stroke-width="1" class="right-angle"/>
+                                    <text x="300" y="100" text-anchor="middle" class="triangle-label">Right</text>
+                                    <text x="300" y="115" text-anchor="middle" class="triangle-sublabel">90° angle</text>
+                                </g>
+                                
+                                <!-- Triangle with measurements -->
+                                <g class="measured-triangle">
+                                    <polygon points="100,180 200,180 150,130" class="example-triangle" stroke-width="3"/>
+                                    
+                                    <!-- Side labels -->
+                                    <text x="150" y="200" text-anchor="middle" class="measurement">base = 100</text>
+                                    <text x="70" y="160" class="measurement">a</text>
+                                    <text x="230" y="160" class="measurement">b</text>
+                                    
+                                    <!-- Height line -->
+                                    <line x1="150" y1="130" x2="150" y2="180" stroke-width="2" stroke-dasharray="5,5" class="height-line"/>
+                                    <text x="160" y="155" class="measurement">height</text>
+                                    
+                                    <!-- Angle markers -->
+                                    <path d="M 110 180 A 10 10 0 0 0 120 170" fill="none" stroke-width="2" class="angle-arc"/>
+                                    <text x="115" y="175" class="angle-label">α</text>
+                                    
+                                    <path d="M 190 180 A 10 10 0 0 1 180 170" fill="none" stroke-width="2" class="angle-arc"/>
+                                    <text x="185" y="175" class="angle-label">β</text>
+                                    
+                                    <path d="M 145 140 A 10 10 0 0 0 155 140" fill="none" stroke-width="2" class="angle-arc"/>
+                                    <text x="150" y="145" class="angle-label">γ</text>
+                                </g>
+                                
+                                <text x="175" y="230" text-anchor="middle" class="formula">α + β + γ = 180°</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-section">
+                    <h2>Pythagorean Theorem</h2>
+                    
+                    <!-- Real-world applications for Pythagorean theorem -->
+                    <div class="real-world-intro">
+                        <h3>🌍 The Most Useful Formula Ever?</h3>
+                        <div class="application-examples">
+                            <div class="example-card">
+                                <h4>📱 Screen Technology</h4>
+                                <p>TV and phone screen sizes are measured diagonally. A 50" TV with 16:9 ratio has width and height calculated using the Pythagorean theorem.</p>
+                                <small>50² = width² + height²</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>🏠 Construction & Carpentry</h4>
+                                <p>Builders use the "3-4-5 rule" to ensure corners are perfectly square. If sides measure 3 and 4 units, the diagonal should be exactly 5 units.</p>
+                                <small>3² + 4² = 5² (9 + 16 = 25)</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>✈️ Aviation & Navigation</h4>
+                                <p>Pilots calculate direct flight distances using coordinates. The shortest path between two points uses Pythagorean theorem in 3D space.</p>
+                                <small>Distance = √[(x₂-x₁)² + (y₂-y₁)²]</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>The Most Famous Formula in Math</h3>
+                            <p>Discovered over 2,500 years ago, this theorem is still used millions of times daily in technology, construction, and navigation:</p>
+                            <div class="equation">a² + b² = c²</div>
+                            <ul>
+                                <li><strong>a, b</strong> = legs (the two shorter sides)</li>
+                                <li><strong>c</strong> = hypotenuse (the longest side, opposite the right angle)</li>
+                            </ul>
+                            
+                            <div class="real-world-example">
+                                <h4>Real Example: Ladder Safety</h4>
+                                <p>A 13-foot ladder against a 12-foot wall:</p>
+                                <p>How far from the wall should the base be?</p>
+                                <p>12² + distance² = 13²</p>
+                                <p>144 + distance² = 169</p>
+                                <p>distance = √25 = 5 feet</p>
+                                <small>This ensures the ladder is at a safe angle!</small>
+                            </div>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="geometry-diagram">
+                                <!-- Right triangle with squares -->
+                                <g class="pythagorean-demo">
+                                    <!-- Main right triangle -->
+                                    <polygon points="100,200 200,200 100,120" class="main-triangle" stroke-width="3"/>
+                                    
+                                    <!-- Right angle indicator -->
+                                    <rect x="95" y="195" width="10" height="10" fill="none" stroke-width="2" class="right-angle"/>
+                                    
+                                    <!-- Square on side a -->
+                                    <rect x="20" y="120" width="80" height="80" class="square-a" stroke-width="2"/>
+                                    <text x="60" y="165" text-anchor="middle" class="square-label">a²</text>
+                                    
+                                    <!-- Square on side b -->
+                                    <rect x="100" y="200" width="100" height="80" class="square-b" stroke-width="2"/>
+                                    <text x="150" y="245" text-anchor="middle" class="square-label">b²</text>
+                                    
+                                    <!-- Square on hypotenuse c -->
+                                    <g transform="rotate(-38.66 150 160)">
+                                        <rect x="110" y="120" width="80" height="80" class="square-c" stroke-width="2"/>
+                                        <text x="150" y="165" text-anchor="middle" class="square-label">c²</text>
+                                    </g>
+                                    
+                                    <!-- Side labels -->
+                                    <text x="85" y="165" class="side-label">a</text>
+                                    <text x="150" y="215" class="side-label">b</text>
+                                    <text x="140" y="155" class="side-label">c</text>
+                                    
+                                    <!-- Example values -->
+                                    <text x="60" y="185" class="example-value">3</text>
+                                    <text x="150" y="225" class="example-value">4</text>
+                                    <text x="140" y="175" class="example-value">5</text>
+                                </g>
+                                
+                                <!-- Formula demonstration -->
+                                <text x="175" y="50" text-anchor="middle" class="formula-demo">3² + 4² = 5²</text>
+                                <text x="175" y="70" text-anchor="middle" class="formula-demo">9 + 16 = 25 ✓</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-section">
+                    <h2>Circles and Their Properties</h2>
+                    
+                    <!-- Real-world applications for circles -->
+                    <div class="real-world-intro">
+                        <h3>🌍 Circles Shape Our World</h3>
+                        <div class="application-examples">
+                            <div class="example-card">
+                                <h4>🛞 Wheels & Transportation</h4>
+                                <p>From bicycle wheels to car tires, circular motion is fundamental to transportation. Wheel circumference determines how far you travel per rotation.</p>
+                                <small>Distance = circumference × number of rotations</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>📡 Satellite Dishes & Antennas</h4>
+                                <p>Circular and parabolic dishes focus radio waves to a single point. The larger the dish area, the stronger the signal reception.</p>
+                                <small>Signal strength relates to dish area = πr²</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>🍕 Food & Packaging</h4>
+                                <p>Pizza sizes, cake pans, and circular containers are priced based on area. A 16" pizza has 4 times the area of an 8" pizza!</p>
+                                <small>16" pizza: π×8² = 64π vs 8" pizza: π×4² = 16π</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>The Perfect Shape</h3>
+                            <p>Circles appear everywhere in nature and technology because they're the most efficient shape - maximum area for minimum perimeter:</p>
+                            <ul>
+                                <li><strong>Radius (r):</strong> Distance from center to any point on the circle</li>
+                                <li><strong>Diameter (d):</strong> Distance across circle through center (d = 2r)</li>
+                                <li><strong>Circumference:</strong> Distance around the circle</li>
+                                <li><strong>Area:</strong> Space enclosed by the circle</li>
+                            </ul>
+                            <div class="formulas">
+                                <div class="equation">Circumference = 2πr</div>
+                                <div class="equation">Area = πr²</div>
+                            </div>
+                            
+                            <div class="real-world-example">
+                                <h4>Real Example: Garden Sprinkler</h4>
+                                <p>A sprinkler with 10-foot radius:</p>
+                                <p>Area watered = π × 10² = 100π ≈ 314 square feet</p>
+                                <p>Circumference = 2π × 10 = 20π ≈ 63 feet around</p>
+                                <small>Perfect for calculating lawn coverage!</small>
+                            </div>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="geometry-diagram">
+                                <!-- Main circle -->
+                                <circle cx="175" cy="150" r="80" class="main-circle" stroke-width="3"/>
+                                
+                                <!-- Center point -->
+                                <circle cx="175" cy="150" r="3" class="center-point"/>
+                                <text x="185" y="155" class="center-label">Center</text>
+                                
+                                <!-- Radius line -->
+                                <line x1="175" y1="150" x2="255" y2="150" stroke-width="2" class="radius-line"/>
+                                <text x="215" y="145" class="measurement-label">r</text>
+                                
+                                <!-- Diameter line -->
+                                <line x1="95" y1="150" x2="255" y2="150" stroke-width="2" stroke-dasharray="5,5" class="diameter-line"/>
+                                <text x="175" y="140" text-anchor="middle" class="measurement-label">diameter = 2r</text>
+                                
+                                <!-- Circumference arc with arrows -->
+                                <path d="M 255 150 A 80 80 0 0 1 175 230" fill="none" stroke-width="3" class="circumference-arc" marker-end="url(#arrow)"/>
+                                <path d="M 175 230 A 80 80 0 0 1 95 150" fill="none" stroke-width="3" class="circumference-arc" marker-end="url(#arrow)"/>
+                                <path d="M 95 150 A 80 80 0 0 1 175 70" fill="none" stroke-width="3" class="circumference-arc" marker-end="url(#arrow)"/>
+                                <path d="M 175 70 A 80 80 0 0 1 255 150" fill="none" stroke-width="3" class="circumference-arc" marker-end="url(#arrow)"/>
+                                
+                                <!-- Circumference label -->
+                                <text x="175" y="280" text-anchor="middle" class="formula">Circumference = 2πr</text>
+                                
+                                <!-- Area indication -->
+                                <circle cx="175" cy="150" r="40" class="area-circle" opacity="0.3"/>
+                                <text x="175" y="155" text-anchor="middle" class="area-label">Area = πr²</text>
+                                
+                                <!-- Example calculation -->
+                                <text x="50" y="50" class="example-calc">If r = 5:</text>
+                                <text x="50" y="70" class="example-calc">C = 2π(5) = 10π ≈ 31.4</text>
+                                <text x="50" y="90" class="example-calc">A = π(5)² = 25π ≈ 78.5</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-section">
+                    <h2>Area and Perimeter</h2>
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>Common Shape Formulas</h3>
+                            <p>Essential area and perimeter formulas:</p>
+                            <div class="formula-list">
+                                <div class="shape-formula">
+                                    <strong>Rectangle:</strong>
+                                    <div>Area = length × width</div>
+                                    <div>Perimeter = 2(l + w)</div>
+                                </div>
+                                <div class="shape-formula">
+                                    <strong>Square:</strong>
+                                    <div>Area = side²</div>
+                                    <div>Perimeter = 4 × side</div>
+                                </div>
+                                <div class="shape-formula">
+                                    <strong>Triangle:</strong>
+                                    <div>Area = ½ × base × height</div>
+                                    <div>Perimeter = a + b + c</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="geometry-diagram">
+                                <!-- Rectangle -->
+                                <g class="shape-demo">
+                                    <rect x="50" y="50" width="80" height="50" class="demo-rectangle" stroke-width="2"/>
+                                    <text x="90" y="80" text-anchor="middle" class="shape-label">Rectangle</text>
+                                    <text x="90" y="45" text-anchor="middle" class="dimension">8</text>
+                                    <text x="35" y="80" text-anchor="middle" class="dimension">5</text>
+                                    <text x="90" y="120" text-anchor="middle" class="area-result">A = 8 × 5 = 40</text>
+                                </g>
+                                
+                                <!-- Square -->
+                                <g class="shape-demo">
+                                    <rect x="180" y="50" width="60" height="60" class="demo-square" stroke-width="2"/>
+                                    <text x="210" y="85" text-anchor="middle" class="shape-label">Square</text>
+                                    <text x="210" y="45" text-anchor="middle" class="dimension">6</text>
+                                    <text x="210" y="130" text-anchor="middle" class="area-result">A = 6² = 36</text>
+                                </g>
+                                
+                                <!-- Triangle -->
+                                <g class="shape-demo">
+                                    <polygon points="80,180 140,180 110,140" class="demo-triangle" stroke-width="2"/>
+                                    <line x1="110" y1="140" x2="110" y2="180" stroke-width="1" stroke-dasharray="3,3" class="height-indicator"/>
+                                    <text x="110" y="200" text-anchor="middle" class="shape-label">Triangle</text>
+                                    <text x="110" y="135" text-anchor="middle" class="dimension">h=4</text>
+                                    <text x="110" y="195" text-anchor="middle" class="dimension">b=6</text>
+                                    <text x="110" y="220" text-anchor="middle" class="area-result">A = ½ × 6 × 4 = 12</text>
+                                </g>
+                                
+                                <!-- Parallelogram -->
+                                <g class="shape-demo">
+                                    <polygon points="200,180 260,180 280,140 220,140" class="demo-parallelogram" stroke-width="2"/>
+                                    <line x1="220" y1="140" x2="220" y2="180" stroke-width="1" stroke-dasharray="3,3" class="height-indicator"/>
+                                    <text x="240" y="200" text-anchor="middle" class="shape-label">Parallelogram</text>
+                                    <text x="215" y="135" text-anchor="middle" class="dimension">h=4</text>
+                                    <text x="240" y="195" text-anchor="middle" class="dimension">b=6</text>
+                                    <text x="240" y="220" text-anchor="middle" class="area-result">A = b × h = 24</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="practice-problems">
+            <div class="container">
+                <h2>Geometry Practice</h2>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <h3>Triangle Area</h3>
+                        <p>Find the area of a triangle with:</p>
+                        <p>Base = 12 cm, Height = 8 cm</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('geo-answer1')">Show Answer</button>
+                        <div id="geo-answer1" class="answer hidden">
+                            Area = ½ × 12 × 8 = 48 cm²
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>Pythagorean Theorem</h3>
+                        <p>Find the hypotenuse if:</p>
+                        <p>a = 6, b = 8</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('geo-answer2')">Show Answer</button>
+                        <div id="geo-answer2" class="answer hidden">
+                            c² = 6² + 8² = 36 + 64 = 100<br>
+                            c = √100 = 10
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>Circle Area</h3>
+                        <p>Find the area of a circle with:</p>
+                        <p>Radius = 7 cm</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('geo-answer3')">Show Answer</button>
+                        <div id="geo-answer3" class="answer hidden">
+                            Area = π × 7² = 49π ≈ 153.9 cm²
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Math Learning Hub. Designed for 9th Grade Students.</p>
+        </div>
+    </footer>
+
+    <script src="js/auto-translate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

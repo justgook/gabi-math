@@ -1,0 +1,1314 @@
+/* CSS Variables for Theme System */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-accent: #0d6efd;
+  --border-color: #dee2e6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-primary: #0d6efd;
+  --accent-secondary: #6f42c1;
+  --success: #198754;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  
+  /* SVG Colors */
+  --svg-stroke: #495057;
+  --svg-fill: #e9ecef;
+  --grid-color: #adb5bd;
+  --math-primary: #0d6efd;
+  --math-secondary: #6f42c1;
+  --math-accent: #20c997;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-accent: #4dabf7;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent-primary: #4dabf7;
+  --accent-secondary: #9775fa;
+  --success: #51cf66;
+  --warning: #ffd43b;
+  --danger: #ff6b6b;
+  
+  /* SVG Colors for Dark Theme */
+  --svg-stroke: #ffffff;
+  --svg-fill: #404040;
+  --grid-color: #6c757d;
+  --math-primary: #4dabf7;
+  --math-secondary: #9775fa;
+  --math-accent: #63e6be;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation Styles */
+.navbar {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+/* Navigation Controls */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.language-select {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.language-select:hover,
+.language-select:focus {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.language-select option {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 0.5rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.theme-icon {
+  fill: none;
+  stroke: var(--text-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sun-icon {
+  display: block;
+}
+
+.moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+  display: block;
+}
+
+/* Main Content */
+.main-content {
+  min-height: calc(100vh - 140px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-svg {
+  margin-top: 2rem;
+}
+
+/* Page Header */
+.page-header {
+  background-color: var(--bg-secondary);
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-primary);
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Content Sections */
+.content-section {
+  padding: 3rem 0;
+}
+
+.topic-section {
+  margin-bottom: 4rem;
+}
+
+.topic-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+  border-bottom: 2px solid var(--accent-primary);
+  padding-bottom: 0.5rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.explanation h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.explanation p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.explanation ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.explanation li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Equations and Formulas */
+.equation {
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem 0;
+  border-left: 4px solid var(--accent-primary);
+}
+
+.equation-system {
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  border-left: 4px solid var(--accent-secondary);
+}
+
+.formula-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shape-formula {
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--math-accent);
+}
+
+.shape-formula strong {
+  color: var(--accent-primary);
+}
+
+/* SVG Styles */
+.math-illustration,
+.algebra-graph,
+.geometry-diagram,
+.practice-graph,
+.practice-shape {
+  width: 100%;
+  height: auto;
+  background-color: var(--bg-secondary);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+/* SVG Element Styles */
+.grid-lines line,
+.grid line {
+  stroke: var(--grid-color);
+  stroke-width: 1;
+}
+
+.arrow-fill {
+  fill: var(--svg-stroke);
+}
+
+.parabola,
+.linear-line,
+.practice-parabola {
+  stroke: var(--math-primary);
+}
+
+.triangle,
+.equilateral-triangle,
+.isosceles-triangle,
+.right-triangle,
+.practice-triangle,
+.practice-right-triangle {
+  fill: none;
+  stroke: var(--math-secondary);
+}
+
+.point,
+.vertex-point,
+.intersection-point,
+.center-point {
+  fill: var(--accent-primary);
+}
+
+.vertex-highlight {
+  fill: var(--danger);
+  stroke: var(--danger);
+  stroke-width: 2;
+}
+
+.intercept-point {
+  fill: var(--success);
+}
+
+.line1 {
+  stroke: var(--math-primary);
+}
+
+.line2 {
+  stroke: var(--math-secondary);
+}
+
+.main-circle,
+.main-triangle {
+  fill: none;
+  stroke: var(--math-primary);
+}
+
+.height-line,
+.height-indicator {
+  stroke: var(--text-secondary);
+}
+
+.demo-rectangle,
+.demo-square,
+.demo-triangle,
+.demo-parallelogram {
+  fill: var(--svg-fill);
+  stroke: var(--math-primary);
+}
+
+.right-angle {
+  stroke: var(--text-primary);
+}
+
+/* Text in SVGs */
+.axis-label,
+.function-label,
+.shape-label,
+.triangle-label,
+.measurement,
+.measurement-label,
+.grid-number,
+.point-label,
+.vertex-label,
+.intersection-label,
+.triangle-sublabel,
+.angle-label,
+.formula,
+.formula-demo,
+.side-label,
+.example-value,
+.center-label,
+.area-label,
+.example-calc,
+.area-result,
+.icon-text {
+  fill: var(--text-primary);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+}
+
+.function-label,
+.formula {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Topic Cards */
+.topics-overview {
+  padding: 4rem 0;
+  background-color: var(--bg-secondary);
+}
+
+.topics-overview h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--accent-primary);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.topic-card {
+  background-color: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow);
+}
+
+.topic-icon {
+  margin-bottom: 1rem;
+}
+
+.algebra-icon,
+.geometry-icon,
+.geometry-triangle,
+.practice-icon {
+  fill: none;
+  stroke: var(--accent-primary);
+  stroke-width: 2;
+}
+
+.practice-dot {
+  fill: var(--accent-primary);
+}
+
+.topic-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-primary);
+}
+
+.topic-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.topic-link {
+  display: inline-block;
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.topic-link:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* Why Math Matters Section */
+.why-math-matters {
+  background-color: var(--bg-secondary);
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.why-math-matters h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+}
+
+.math-relevance {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.relevance-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.relevance-intro p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.career-connections {
+  margin-bottom: 3rem;
+}
+
+.career-connections h3 {
+  font-size: 1.8rem;
+  color: var(--accent-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.career-item {
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.career-item h4 {
+  color: var(--accent-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.career-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.daily-life-math h3 {
+  font-size: 1.8rem;
+  color: var(--accent-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.daily-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.daily-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.daily-item:hover {
+  transform: translateY(-2px);
+}
+
+.daily-item .emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.daily-item h4 {
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.daily-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 0;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--accent-primary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--accent-primary);
+}
+
+.feature p {
+  color: var(--text-secondary);
+}
+
+/* Practice Problems */
+.practice-problems {
+  background-color: var(--bg-secondary);
+  padding: 3rem 0;
+}
+
+.practice-problems h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.problem-card {
+  background-color: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.problem-card h3 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.problem-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.reveal-btn {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.reveal-btn:hover {
+  background-color: var(--accent-secondary);
+}
+
+.answer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--success);
+}
+
+.answer.hidden {
+  display: none;
+}
+
+/* Practice Page Styles */
+.practice-section {
+  padding: 3rem 0;
+}
+
+.practice-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.interactive-problem {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.interactive-problem h3 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.problem-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.steps {
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.step {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.step:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.step-number {
+  font-weight: bold;
+  color: var(--accent-primary);
+}
+
+.step-text {
+  color: var(--text-secondary);
+  margin-left: 0.5rem;
+}
+
+.equation-work {
+  font-family: 'Courier New', monospace;
+  background-color: var(--bg-tertiary);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+}
+
+.answer-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.answer-input input {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  width: 80px;
+}
+
+.answer-input button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-input button:hover {
+  background-color: var(--accent-secondary);
+}
+
+.feedback {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.feedback.correct {
+  background-color: var(--success);
+  color: white;
+}
+
+.feedback.incorrect {
+  background-color: var(--danger);
+  color: white;
+}
+
+/* Quiz Styles */
+.quiz-container {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.score-display {
+  font-weight: bold;
+  color: var(--accent-primary);
+}
+
+.quiz-question {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.quiz-question.active {
+  display: block;
+}
+
+.quiz-question h4 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.quiz-option {
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.quiz-option:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.quiz-option.selected {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.quiz-option.correct {
+  border-color: var(--success);
+  background-color: var(--success);
+  color: white;
+}
+
+.quiz-option.incorrect {
+  border-color: var(--danger);
+  background-color: var(--danger);
+  color: white;
+}
+
+.quiz-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.quiz-navigation button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-navigation button:hover:not(:disabled) {
+  background-color: var(--accent-secondary);
+}
+
+.quiz-navigation button:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.quiz-results {
+  text-align: center;
+  padding: 2rem;
+}
+
+.quiz-results h3 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.quiz-results button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-results button:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* Relevance Section */
+.relevance-section {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+.relevance-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.relevance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.relevance-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.relevance-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.relevance-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.relevance-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Real-world Introduction Sections */
+.real-world-intro {
+  background-color: var(--bg-tertiary);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--math-accent);
+}
+
+.real-world-intro h3 {
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.application-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.example-card {
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.example-card h4 {
+  color: var(--accent-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.example-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.example-card small {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Real-world Examples within explanations */
+.real-world-example {
+  background-color: var(--bg-tertiary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid var(--success);
+}
+
+.real-world-example h4 {
+  color: var(--success);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.real-world-example p {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+}
+
+.real-world-example small {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Enhanced formulas section */
+.formulas {
+  margin-top: 1rem;
+}
+
+.formulas .equation {
+  margin: 0.75rem 0;
+  font-size: 1.1rem;
+}
+
+/* Study Tips */
+.study-tips {
+  background-color: var(--bg-secondary);
+  padding: 3rem 0;
+}
+
+.study-tips h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tip-card {
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.tip-card h3 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.tip-card p {
+  color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .nav-controls {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .content-grid,
+  .problem-workspace {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .topics-grid,
+  .features-grid,
+  .problems-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .practice-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-btn {
+    border-bottom: none;
+    border-right: 3px solid transparent;
+  }
+  
+  .tab-btn.active,
+  .tab-btn:hover {
+    border-right-color: var(--accent-primary);
+    border-bottom-color: transparent;
+  }
+  
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .quiz-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .topic-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .math-illustration,
+  .algebra-graph,
+  .geometry-diagram,
+  .practice-graph,
+  .practice-shape {
+    padding: 0.5rem;
+  }
+}
+
+/* Animation for smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+.nav-link:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .theme-toggle,
+  footer {
+    display: none;
+  }
+  
+  .main-content {
+    margin: 0;
+  }
+  
+  .hero {
+    background: none;
+    color: black;
+  }
+}

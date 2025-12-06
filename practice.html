@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice - 9th Grade Math</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Math Hub</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="algebra.html" class="nav-link">Algebra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="geometry.html" class="nav-link">Geometry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link active">Practice</a>
+                    </li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <svg class="theme-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="sun-icon" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <path class="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Interactive Practice</h1>
+                <p>Test your knowledge with interactive exercises and instant feedback</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <div class="container">
+                <div class="practice-tabs">
+                    <button class="tab-btn active" onclick="showTab('algebra-practice')">Algebra Practice</button>
+                    <button class="tab-btn" onclick="showTab('geometry-practice')">Geometry Practice</button>
+                    <button class="tab-btn" onclick="showTab('mixed-practice')">Mixed Problems</button>
+                </div>
+
+                <!-- Algebra Practice Tab -->
+                <div id="algebra-practice" class="tab-content active">
+                    <h2>Algebra Practice Problems</h2>
+                    
+                    <div class="interactive-problem">
+                        <h3>Linear Equation Solver</h3>
+                        <p>Solve for x: 3x + 7 = 22</p>
+                        <div class="problem-workspace">
+                            <div class="steps">
+                                <div class="step">
+                                    <span class="step-number">1.</span>
+                                    <span class="step-text">Subtract 7 from both sides:</span>
+                                    <div class="equation-work">3x + 7 - 7 = 22 - 7</div>
+                                    <div class="equation-work">3x = 15</div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2.</span>
+                                    <span class="step-text">Divide both sides by 3:</span>
+                                    <div class="equation-work">3x ÷ 3 = 15 ÷ 3</div>
+                                    <div class="equation-work">x = 5</div>
+                                </div>
+                            </div>
+                            <div class="answer-input">
+                                <label for="linear-answer">Your answer: x = </label>
+                                <input type="number" id="linear-answer" placeholder="Enter answer">
+                                <button onclick="checkAnswer('linear-answer', 5, 'linear-feedback')">Check</button>
+                                <div id="linear-feedback" class="feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-problem">
+                        <h3>Quadratic Function Graphing</h3>
+                        <p>Identify the vertex of: y = x² - 4x + 3</p>
+                        <div class="problem-workspace">
+                            <div class="graph-container">
+                                <svg width="300" height="250" viewBox="0 0 300 250" class="practice-graph">
+                                    <!-- Grid -->
+                                    <g class="grid-system">
+                                        <line x1="30" y1="220" x2="270" y2="220" stroke-width="1"/>
+                                        <line x1="150" y1="30" x2="150" y2="220" stroke-width="1"/>
+                                        
+                                        <!-- Grid lines -->
+                                        <g class="grid" opacity="0.3">
+                                            <line x1="30" y1="180" x2="270" y2="180"/>
+                                            <line x1="30" y1="140" x2="270" y2="140"/>
+                                            <line x1="30" y1="100" x2="270" y2="100"/>
+                                            <line x1="30" y1="60" x2="270" y2="60"/>
+                                            <line x1="90" y1="30" x2="90" y2="220"/>
+                                            <line x1="210" y1="30" x2="210" y2="220"/>
+                                        </g>
+                                        
+                                        <!-- Parabola -->
+                                        <path d="M 90 180 Q 150 60 210 180" stroke-width="3" fill="none" class="practice-parabola"/>
+                                        
+                                        <!-- Vertex point -->
+                                        <circle cx="150" cy="60" r="4" class="vertex-highlight"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="vertex-input">
+                                <label>Vertex coordinates:</label>
+                                <input type="number" id="vertex-x" placeholder="x" style="width: 60px;">
+                                <span>,</span>
+                                <input type="number" id="vertex-y" placeholder="y" style="width: 60px;">
+                                <button onclick="checkVertex()">Check Vertex</button>
+                                <div id="vertex-feedback" class="feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometry Practice Tab -->
+                <div id="geometry-practice" class="tab-content">
+                    <h2>Geometry Practice Problems</h2>
+                    
+                    <div class="interactive-problem">
+                        <h3>Triangle Area Calculator</h3>
+                        <p>Calculate the area of the triangle below:</p>
+                        <div class="problem-workspace">
+                            <div class="shape-container">
+                                <svg width="300" height="200" viewBox="0 0 300 200" class="practice-shape">
+                                    <polygon points="100,150 200,150 150,80" class="practice-triangle" stroke-width="3"/>
+                                    <line x1="150" y1="80" x2="150" y2="150" stroke-width="2" stroke-dasharray="5,5" class="height-line"/>
+                                    
+                                    <!-- Measurements -->
+                                    <text x="150" y="170" text-anchor="middle" class="measurement">Base = 10 cm</text>
+                                    <text x="165" y="115" class="measurement">Height = 7 cm</text>
+                                </svg>
+                            </div>
+                            <div class="calculation-area">
+                                <div class="formula-reminder">Formula: Area = ½ × base × height</div>
+                                <div class="answer-input">
+                                    <label for="triangle-area">Area = </label>
+                                    <input type="number" id="triangle-area" placeholder="Enter area">
+                                    <span> cm²</span>
+                                    <button onclick="checkAnswer('triangle-area', 35, 'triangle-feedback')">Check</button>
+                                    <div id="triangle-feedback" class="feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-problem">
+                        <h3>Pythagorean Theorem</h3>
+                        <p>Find the missing side length:</p>
+                        <div class="problem-workspace">
+                            <div class="shape-container">
+                                <svg width="300" height="200" viewBox="0 0 300 200" class="practice-shape">
+                                    <polygon points="80,150 200,150 80,80" class="practice-right-triangle" stroke-width="3"/>
+                                    <rect x="75" y="145" width="10" height="10" fill="none" stroke-width="2" class="right-angle"/>
+                                    
+                                    <!-- Side labels -->
+                                    <text x="60" y="120" class="measurement">a = 9</text>
+                                    <text x="140" y="170" class="measurement">b = 12</text>
+                                    <text x="130" y="110" class="measurement">c = ?</text>
+                                </svg>
+                            </div>
+                            <div class="calculation-area">
+                                <div class="formula-reminder">Formula: a² + b² = c²</div>
+                                <div class="work-area">
+                                    <div>9² + 12² = c²</div>
+                                    <div>81 + 144 = c²</div>
+                                    <div>225 = c²</div>
+                                    <div>c = √225</div>
+                                </div>
+                                <div class="answer-input">
+                                    <label for="hypotenuse">c = </label>
+                                    <input type="number" id="hypotenuse" placeholder="Enter length">
+                                    <button onclick="checkAnswer('hypotenuse', 15, 'hypotenuse-feedback')">Check</button>
+                                    <div id="hypotenuse-feedback" class="feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mixed Practice Tab -->
+                <div id="mixed-practice" class="tab-content">
+                    <h2>Mixed Practice Problems</h2>
+                    
+                    <div class="quiz-container">
+                        <div class="quiz-header">
+                            <h3>Quick Quiz</h3>
+                            <div class="score-display">Score: <span id="quiz-score">0</span>/5</div>
+                        </div>
+                        
+                        <div class="quiz-question active" data-question="1">
+                            <h4>Question 1: What is the slope of the line y = 3x - 2?</h4>
+                            <div class="quiz-options">
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">-2</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, true)">3</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">2</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">-3</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" data-question="2">
+                            <h4>Question 2: What is the area of a circle with radius 4?</h4>
+                            <div class="quiz-options">
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">8π</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, true)">16π</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">4π</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">12π</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" data-question="3">
+                            <h4>Question 3: In a right triangle, if a = 3 and b = 4, what is c?</h4>
+                            <div class="quiz-options">
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">7</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, true)">5</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">6</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">4</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" data-question="4">
+                            <h4>Question 4: What is the sum of angles in any triangle?</h4>
+                            <div class="quiz-options">
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">90°</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">360°</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, true)">180°</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">270°</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" data-question="5">
+                            <h4>Question 5: Solve for x: 2x + 6 = 14</h4>
+                            <div class="quiz-options">
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">3</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, true)">4</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">5</button>
+                                <button class="quiz-option" onclick="selectAnswer(this, false)">6</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-navigation">
+                            <button id="prev-btn" onclick="previousQuestion()" disabled>Previous</button>
+                            <button id="next-btn" onclick="nextQuestion()">Next</button>
+                            <button id="finish-btn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+                        </div>
+
+                        <div id="quiz-results" class="quiz-results" style="display: none;">
+                            <h3>Quiz Complete!</h3>
+                            <p>Your final score: <span id="final-score"></span>/5</p>
+                            <button onclick="restartQuiz()">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="study-tips">
+            <div class="container">
+                <h2>Study Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>📝 Practice Regularly</h3>
+                        <p>Solve a few problems each day to build confidence and retain concepts.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>🎯 Focus on Understanding</h3>
+                        <p>Don't just memorize formulas - understand why they work.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>📊 Use Visual Aids</h3>
+                        <p>Draw diagrams and graphs to help visualize mathematical concepts.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>🤝 Study with Others</h3>
+                        <p>Explain concepts to classmates - teaching helps reinforce learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Math Learning Hub. Designed for 9th Grade Students.</p>
+        </div>
+    </footer>
+
+    <script src="js/auto-translate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra - 9th Grade Math</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Math Hub</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" data-translate="navHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="algebra.html" class="nav-link active" data-translate="navAlgebra">Algebra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="geometry.html" class="nav-link" data-translate="navGeometry">Geometry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link" data-translate="navPractice">Practice</a>
+                    </li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <svg class="theme-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="sun-icon" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <path class="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1 data-translate="algebraFundamentals">Algebra Fundamentals</h1>
+                <p data-translate="algebraSubtitle">Master linear equations, quadratic functions, and algebraic thinking</p>
+            </div>
+        </section>
+
+        <!-- Why Algebra Matters Section -->
+        <section class="relevance-section">
+            <div class="container">
+                <h2>Why Algebra Still Matters Today</h2>
+                <div class="relevance-grid">
+                    <div class="relevance-card">
+                        <h3>🚀 Technology & Programming</h3>
+                        <p>Every app, video game, and website uses algebraic equations. When you adjust screen brightness, the phone calculates using linear equations. Game physics engines use quadratic functions for realistic movement.</p>
+                    </div>
+                    <div class="relevance-card">
+                        <h3>💰 Financial Planning</h3>
+                        <p>Calculating loan payments, investment growth, and budgeting all rely on algebraic formulas. Understanding these helps you make smart financial decisions throughout life.</p>
+                    </div>
+                    <div class="relevance-card">
+                        <h3>🏗️ Engineering & Design</h3>
+                        <p>From designing bridges to creating efficient transportation routes, engineers use algebra daily. Even architects use algebraic relationships to ensure buildings are both beautiful and structurally sound.</p>
+                    </div>
+                    <div class="relevance-card">
+                        <h3>📊 Data Analysis</h3>
+                        <p>In our data-driven world, algebra helps analyze trends, predict outcomes, and make informed decisions. Social media algorithms, weather forecasting, and medical research all depend on algebraic models.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="topic-section">
+                    <h2>Linear Equations</h2>
+                    
+                    <!-- Real-world introduction -->
+                    <div class="real-world-intro">
+                        <h3>🌍 Where You'll Use This</h3>
+                        <div class="application-examples">
+                            <div class="example-card">
+                                <h4>📱 Phone Plans</h4>
+                                <p>Cost = $30 + $0.10 × minutes over limit</p>
+                                <small>Linear equation: y = 0.10x + 30</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>🚗 Uber Pricing</h4>
+                                <p>Fare = Base fee + Rate × Distance</p>
+                                <small>Linear equation: y = mx + b</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>💡 Electricity Bills</h4>
+                                <p>Bill = Fixed charge + Rate × kWh used</p>
+                                <small>Linear relationship between usage and cost</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>Understanding Linear Equations</h3>
+                            <p>A linear equation creates a straight line when graphed and represents a constant rate of change. This is everywhere in real life!</p>
+                            <div class="equation">y = mx + b</div>
+                            <ul>
+                                <li><strong>m</strong> = slope (rate of change) - How fast something increases</li>
+                                <li><strong>b</strong> = y-intercept (starting value) - Where you begin</li>
+                            </ul>
+                            
+                            <div class="real-world-example">
+                                <h4>Real Example: Saving Money</h4>
+                                <p>If you save $20 per week and start with $50:</p>
+                                <div class="equation">Savings = 20 × weeks + 50</div>
+                                <p>After 10 weeks: $20 × 10 + $50 = $250</p>
+                            </div>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="algebra-graph">
+                                <defs>
+                                    <marker id="arrow" markerWidth="10" markerHeight="7" 
+                                            refX="9" refY="3.5" orient="auto">
+                                        <polygon points="0 0, 10 3.5, 0 7" class="arrow-fill" />
+                                    </marker>
+                                </defs>
+                                
+                                <!-- Grid -->
+                                <g class="grid-system">
+                                    <!-- Axes -->
+                                    <line x1="50" y1="250" x2="320" y2="250" stroke-width="2" marker-end="url(#arrow)"/>
+                                    <line x1="50" y1="250" x2="50" y2="30" stroke-width="2" marker-end="url(#arrow)"/>
+                                    
+                                    <!-- Grid lines -->
+                                    <g class="grid" opacity="0.3">
+                                        <line x1="50" y1="200" x2="320" y2="200"/>
+                                        <line x1="50" y1="150" x2="320" y2="150"/>
+                                        <line x1="50" y1="100" x2="320" y2="100"/>
+                                        <line x1="100" y1="30" x2="100" y2="250"/>
+                                        <line x1="150" y1="30" x2="150" y2="250"/>
+                                        <line x1="200" y1="30" x2="200" y2="250"/>
+                                        <line x1="250" y1="30" x2="250" y2="250"/>
+                                        <line x1="300" y1="30" x2="300" y2="250"/>
+                                    </g>
+                                    
+                                    <!-- Axis labels -->
+                                    <text x="325" y="255" class="axis-label">x</text>
+                                    <text x="40" y="25" class="axis-label">y</text>
+                                    
+                                    <!-- Numbers -->
+                                    <text x="95" y="265" class="grid-number">1</text>
+                                    <text x="145" y="265" class="grid-number">2</text>
+                                    <text x="195" y="265" class="grid-number">3</text>
+                                    <text x="245" y="265" class="grid-number">4</text>
+                                    <text x="35" y="205" class="grid-number">1</text>
+                                    <text x="35" y="155" class="grid-number">2</text>
+                                    <text x="35" y="105" class="grid-number">3</text>
+                                </g>
+                                
+                                <!-- Linear function y = 2x + 1 -->
+                                <line x1="75" y1="200" x2="275" y2="50" stroke-width="3" class="linear-line"/>
+                                
+                                <!-- Points -->
+                                <circle cx="100" cy="150" r="4" class="point"/>
+                                <circle cx="150" cy="100" r="4" class="point"/>
+                                <circle cx="200" cy="50" r="4" class="point"/>
+                                
+                                <!-- Labels -->
+                                <text x="180" y="40" class="function-label">y = 2x + 1</text>
+                                <text x="105" y="145" class="point-label">(1,3)</text>
+                                <text x="155" y="95" class="point-label">(2,5)</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-section">
+                    <h2>Quadratic Functions</h2>
+                    
+                    <!-- Real-world applications for quadratics -->
+                    <div class="real-world-intro">
+                        <h3>🌍 Quadratics in Action</h3>
+                        <div class="application-examples">
+                            <div class="example-card">
+                                <h4>🏀 Sports Physics</h4>
+                                <p>Basketball shots, soccer kicks, and baseball trajectories all follow parabolic paths due to gravity.</p>
+                                <small>Height = -16t² + initial_velocity × t + starting_height</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>📈 Business Optimization</h4>
+                                <p>Companies use quadratics to find maximum profit points and optimal pricing strategies.</p>
+                                <small>Profit often peaks at a specific price point</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>🏗️ Architecture</h4>
+                                <p>Bridges, arches, and satellite dishes use parabolic shapes for strength and signal focus.</p>
+                                <small>The Gateway Arch follows a parabolic curve</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>Understanding Parabolas</h3>
+                            <p>Quadratic functions create U-shaped curves called parabolas. They model acceleration, optimization, and many natural phenomena:</p>
+                            <div class="equation">y = ax² + bx + c</div>
+                            <ul>
+                                <li><strong>a</strong> determines direction (up/down) and width of the parabola</li>
+                                <li><strong>b</strong> affects the position of the vertex</li>
+                                <li><strong>c</strong> is the y-intercept (starting point)</li>
+                                <li>The vertex shows the maximum or minimum value</li>
+                            </ul>
+                            
+                            <div class="real-world-example">
+                                <h4>Real Example: Water Fountain</h4>
+                                <p>A water fountain's height follows: h = -16t² + 32t + 3</p>
+                                <p>Maximum height occurs at t = 1 second, reaching h = 19 feet</p>
+                                <p>Water hits the ground when h = 0</p>
+                            </div>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="algebra-graph">
+                                <!-- Grid system (reusing from above) -->
+                                <g class="grid-system">
+                                    <line x1="50" y1="250" x2="320" y2="250" stroke-width="2" marker-end="url(#arrow)"/>
+                                    <line x1="50" y1="250" x2="50" y2="30" stroke-width="2" marker-end="url(#arrow)"/>
+                                    
+                                    <g class="grid" opacity="0.3">
+                                        <line x1="50" y1="200" x2="320" y2="200"/>
+                                        <line x1="50" y1="150" x2="320" y2="150"/>
+                                        <line x1="50" y1="100" x2="320" y2="100"/>
+                                        <line x1="100" y1="30" x2="100" y2="250"/>
+                                        <line x1="150" y1="30" x2="150" y2="250"/>
+                                        <line x1="200" y1="30" x2="200" y2="250"/>
+                                        <line x1="250" y1="30" x2="250" y2="250"/>
+                                        <line x1="300" y1="30" x2="300" y2="250"/>
+                                    </g>
+                                    
+                                    <text x="325" y="255" class="axis-label">x</text>
+                                    <text x="40" y="25" class="axis-label">y</text>
+                                </g>
+                                
+                                <!-- Parabola y = x² - 4x + 3 -->
+                                <path d="M 100 200 Q 200 50 300 200" stroke-width="3" fill="none" class="parabola"/>
+                                
+                                <!-- Vertex point -->
+                                <circle cx="200" cy="50" r="4" class="vertex-point"/>
+                                
+                                <!-- x-intercepts -->
+                                <circle cx="150" cy="150" r="3" class="intercept-point"/>
+                                <circle cx="250" cy="150" r="3" class="intercept-point"/>
+                                
+                                <!-- Labels -->
+                                <text x="160" y="40" class="function-label">y = x² - 4x + 3</text>
+                                <text x="180" y="70" class="vertex-label">Vertex (2, -1)</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-section">
+                    <h2>Systems of Equations</h2>
+                    
+                    <!-- Real-world applications for systems -->
+                    <div class="real-world-intro">
+                        <h3>🌍 Systems Solve Real Problems</h3>
+                        <div class="application-examples">
+                            <div class="example-card">
+                                <h4>🛒 Shopping Decisions</h4>
+                                <p>Comparing phone plans, gym memberships, or streaming services with different pricing structures.</p>
+                                <small>Find where two pricing plans cost the same</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>🚗 Traffic Engineering</h4>
+                                <p>Optimizing traffic light timing and route planning to minimize congestion and travel time.</p>
+                                <small>Multiple constraints must be satisfied simultaneously</small>
+                            </div>
+                            <div class="example-card">
+                                <h4>💊 Medical Dosing</h4>
+                                <p>Determining correct medication combinations and dosages based on patient weight, age, and conditions.</p>
+                                <small>Multiple factors affect the optimal treatment</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="explanation">
+                            <h3>Finding Intersection Points</h3>
+                            <p>Systems of equations help us find solutions when multiple conditions must be met simultaneously. This happens constantly in real life!</p>
+                            <div class="equation-system">
+                                <div class="equation">y = 2x + 1</div>
+                                <div class="equation">y = -x + 4</div>
+                            </div>
+                            <p>Solution methods:</p>
+                            <ul>
+                                <li><strong>Graphing:</strong> Visual method - see where lines cross</li>
+                                <li><strong>Substitution:</strong> Algebraic method - replace variables</li>
+                                <li><strong>Elimination:</strong> Add/subtract to eliminate variables</li>
+                            </ul>
+                            
+                            <div class="real-world-example">
+                                <h4>Real Example: Business Break-Even</h4>
+                                <p>Company A: Cost = $1000 + $5 per unit</p>
+                                <p>Company B: Cost = $500 + $8 per unit</p>
+                                <p>At what quantity do they cost the same?</p>
+                                <p>Solution: 167 units (both cost $1,835)</p>
+                            </div>
+                        </div>
+                        <div class="visualization">
+                            <svg width="350" height="300" viewBox="0 0 350 300" class="algebra-graph">
+                                <!-- Grid system -->
+                                <g class="grid-system">
+                                    <line x1="50" y1="250" x2="320" y2="250" stroke-width="2" marker-end="url(#arrow)"/>
+                                    <line x1="50" y1="250" x2="50" y2="30" stroke-width="2" marker-end="url(#arrow)"/>
+                                    
+                                    <g class="grid" opacity="0.3">
+                                        <line x1="50" y1="200" x2="320" y2="200"/>
+                                        <line x1="50" y1="150" x2="320" y2="150"/>
+                                        <line x1="50" y1="100" x2="320" y2="100"/>
+                                        <line x1="100" y1="30" x2="100" y2="250"/>
+                                        <line x1="150" y1="30" x2="150" y2="250"/>
+                                        <line x1="200" y1="30" x2="200" y2="250"/>
+                                        <line x1="250" y1="30" x2="250" y2="250"/>
+                                        <line x1="300" y1="30" x2="300" y2="250"/>
+                                    </g>
+                                    
+                                    <text x="325" y="255" class="axis-label">x</text>
+                                    <text x="40" y="25" class="axis-label">y</text>
+                                </g>
+                                
+                                <!-- First line: y = 2x + 1 -->
+                                <line x1="75" y1="200" x2="275" y2="50" stroke-width="3" class="line1"/>
+                                
+                                <!-- Second line: y = -x + 4 -->
+                                <line x1="100" y1="200" x2="300" y2="50" stroke-width="3" class="line2"/>
+                                
+                                <!-- Intersection point -->
+                                <circle cx="150" cy="100" r="5" class="intersection-point"/>
+                                
+                                <!-- Labels -->
+                                <text x="180" y="40" class="function-label">y = 2x + 1</text>
+                                <text x="220" y="70" class="function-label">y = -x + 4</text>
+                                <text x="155" y="95" class="intersection-label">Solution (1, 3)</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="practice-problems">
+            <div class="container">
+                <h2>Quick Practice</h2>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <h3>Linear Equation</h3>
+                        <p>Find the slope and y-intercept:</p>
+                        <div class="equation">y = 3x - 2</div>
+                        <button class="reveal-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                        <div id="answer1" class="answer hidden">
+                            Slope (m) = 3, Y-intercept (b) = -2
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>Quadratic Function</h3>
+                        <p>What is the vertex of:</p>
+                        <div class="equation">y = x² - 6x + 8</div>
+                        <button class="reveal-btn" onclick="toggleAnswer('answer2')">Show Answer</button>
+                        <div id="answer2" class="answer hidden">
+                            Vertex: (3, -1)
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>System of Equations</h3>
+                        <p>Solve the system:</p>
+                        <div class="equation-system">
+                            <div class="equation">x + y = 5</div>
+                            <div class="equation">x - y = 1</div>
+                        </div>
+                        <button class="reveal-btn" onclick="toggleAnswer('answer3')">Show Answer</button>
+                        <div id="answer3" class="answer hidden">
+                            x = 3, y = 2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Math Learning Hub. Designed for 9th Grade Students.</p>
+        </div>
+    </footer>
+
+    <script src="js/auto-translate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
